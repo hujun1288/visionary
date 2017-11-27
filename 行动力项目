@@ -1,1 +1,3 @@
-
+行动力 客户端需要处理的问题
+1.考勤的下班自动打卡 android ios 
+2.android ios 缓存清除不了 localstorage，清理缓存时，需要清除掉，不然有些问题无法解决
