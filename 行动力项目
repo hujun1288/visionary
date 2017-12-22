@@ -9,5 +9,7 @@
 5.自动缺卡，根据考勤组里的issection=0，即不支持分段打卡的，获取 考勤组里的 noonTime="13:30" 来进行判断，默认是13:30；已处理
 6. 文件预览 android ios 需要返回两次，
 7.ios 打卡成功后，弹出 EBForeNotification 通知，页面点击就无响应了，可能是，EBForeNotification 弹窗的 空白view导致
-8.android 下班提醒，红米note4x android6.0 下班收不到提醒，可能是系统进程关闭，导致广播关闭，接受不到任务，
+8.android 下班提醒，红米note4x android6.0 下班收不到提醒：1.是系统进程关闭，导致广播关闭，接受不到任务；2.进程被杀后 闹钟任务丢失，需要
+判断一下当天有没有添加闹钟任务，有的话 在ClientTabActivity 页面onResume时调用 ClockServers再次设置闹钟服务，保证 闹钟任务不会丢失，
+直至当天闹钟任务执行后再抹除标记，不再添加闹钟任务。
 
